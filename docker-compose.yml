@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  brag-sheet-frontend:
+    container_name: brag-sheet-frontend
+    build:
+      context: .
+    ports:
+      - '3000:3000'

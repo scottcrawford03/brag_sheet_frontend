@@ -1,15 +1,28 @@
 import fetch from "isomorphic-unfetch"
 
 const Page = ({ brags }) =>
-  <div>
-    Brags: {brags.map((brag) => {
+  <div className='brags'>
+    <h3>Brags:</h3>
+    {brags.map((brag) => {
         return(
-          <p>
+          <p className='brag'>
             {brag.brag}
           </p>
         )
       })
     }
+    <style jsx>{`
+        .brags {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .brag {
+          border: 2px solid red;
+          color: blue;
+        }
+      `}</style>
   </div>
 
 Page.getInitialProps = async ({ req }) => {

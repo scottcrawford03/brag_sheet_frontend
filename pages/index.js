@@ -26,7 +26,8 @@ const Page = ({ brags }) =>
   </div>
 
 Page.getInitialProps = async ({ req }) => {
-  const res = await fetch('https://api.bragsheet.app')
+  const apiHost = process.env.API_HOST
+  const res = await fetch(apiHost)
   const json = await res.json()
   debugger
   return { brags: json.brags }
